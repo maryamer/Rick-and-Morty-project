@@ -34,7 +34,7 @@ button {
   outline: none;
 }
 .text-field {
-  padding: 0.7rem 1rem;
+  /* padding: 0.7rem 1rem; */
   border-radius: 0.5rem;
   color: var(--slate-100);
   background-color: var(--slate-500);
@@ -43,11 +43,6 @@ button {
 
 .text-field::placeholder {
   color: var(--slate-400);
-}
-
-.btn {
-  padding: 0.8rem 1rem;
-  border-radius: 1rem;
 }
 
 .btn--primary {
@@ -122,3 +117,7 @@ button {
   inset: 0;
   background-color: rgba(63, 69, 76, 0.8);
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

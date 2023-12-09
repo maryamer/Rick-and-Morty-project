@@ -10,9 +10,10 @@ function CharacterList() {
   const { characters, selectedCharacter } = useSelector(
     (state) => state.characters
   );
+  const dispatch = useDispatch();
 
   return (
-    <div className="characters-list">
+    <div className="characters-list md:h-[39.5rem] w-11/12 scrollbar-thin overflow-auto">
       {characters &&
         characters.map((item) => (
           <Character key={item.id} item={item}>

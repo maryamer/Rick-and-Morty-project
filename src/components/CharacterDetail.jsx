@@ -15,15 +15,15 @@ function CharacterDetail({}) {
     // console.log(character, episodes);
   });
   return (
-    <div style={{ flex: 1 }}>
+    <div className="flex md:flex-col mb-4 w-11/12 md:w-7/12">
       {selectedCharacter && episodes && (
-        <>
+        <div className="flex md:flex-col w-full rounded-lg">
           <CharacterSubInfo
             character={selectedCharacter}
             isFavourite={isFavourite}
           />
           <EpisodeList episodes={episodes} />
-        </>
+        </div>
       )}
     </div>
   );
@@ -34,32 +34,36 @@ export default CharacterDetail;
 function CharacterSubInfo({ character, isFavourite }) {
   const dispatch = useDispatch();
   return (
-    <div className="character-detail">
+    <div className="character-detail rounded-l-lg rounded-lg md:h-fit h-96 w-1/3 md:w-full">
       <img
         src={character.image}
         alt={character.name}
-        className="character-detail__img"
+        className="character-detail__img object-cover"
       />
-      <div className="character-detail__info">
-        <h3 className="name">
-          <span>{character.gender === "Male" ? "M " : "F "}</span>
-          <span>&nbsp;{character.name}</span>
-        </h3>
-        <div className="info">
-          <span
-            className={`status ${character.status === "Dead" ? "red" : ""}`}
-          ></span>
-          <span>&nbsp;{character.status}</span>
-          <span> - &nbsp;{character.species}</span>
+      <div className="character-detail__info h-full flex flex-col md:p-2">
+        <div className="my-4">
+          <h3 className="name">
+            {/* <span className="hidden md:flex">
+              {character.gender === "Male" ? "Male " : "FeMale "}
+            </span> */}
+            <span className="md:font-bold">&nbsp;{character.name}</span>
+          </h3>
+          <div className="info">
+            <span
+              className={`status ${character.status === "Dead" ? "red" : ""}`}
+            ></span>
+            <span>&nbsp;{character.status}</span>
+            <span> - &nbsp;{character.species}</span>
+          </div>
         </div>
-        <div className="location">
+        <div className="location hidden md:block">
           <p>Last known location:</p>
           <p>{character.location.name}</p>
         </div>
         <div className="actions">
           <button
             onClick={() => dispatch(addToFavourites({ character: character }))}
-            className="btn btn--primary"
+            className="btn--primary rounded-lg text-sm py-2"
             disabled={Boolean(isFavourite)}
           >
             {isFavourite ? "unfav" : "Add to Favourite"}
@@ -89,7 +93,7 @@ function EpisodeList({ episodes }) {
     sortedEpisodes = [episodes];
   }
   return (
-    <div className="character-episodes">
+    <div className="character-episodes md:mt-5 h-96 rounded-r-lg rounded-lg overflow-auto scrollbar-thin w-2/3 md:w-full">
       <div className="title">
         <h2>List of Episodes:</h2>
         <button onClick={() => setSort((is) => !is)}>
@@ -99,7 +103,7 @@ function EpisodeList({ episodes }) {
           />
         </button>
       </div>
-      <ul>
+      <ul className="">
         {episodes &&
           sortedEpisodes.map((item, index) => (
             <li key={item.id}>
@@ -107,7 +111,9 @@ function EpisodeList({ episodes }) {
                 {String(index + 1).padStart(2, 0)} - {item.episode} :
                 <strong>{item.name}</strong>
               </div>
-              <div className="badge badge--secondary">{item.air_date}</div>
+              <div className="badge badge--secondary hidden md:flex">
+                {item.air_date}
+              </div>
             </li>
           ))}
       </ul>

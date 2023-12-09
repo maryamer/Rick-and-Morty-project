@@ -12,11 +12,11 @@ const Navbar = ({ children }) => {
   const { characters } = useSelector((state) => state.characters);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar min-w-fit p-2">
       <Logo />
       {children}
       <Search />
-      <div className="navbar__result">
+      <div className="navbar__result hidden md:flex">
         Found {characters?.length} characters
       </div>
       <Favourites />
@@ -32,7 +32,7 @@ export function Search() {
   return (
     <input
       type="text"
-      className="text-field"
+      className="text-field p-2 md:p-3"
       placeholder="search..."
       onChange={(e) => dispatch(searchCharacters({ query: e.target.value }))}
     />

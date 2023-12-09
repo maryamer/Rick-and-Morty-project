@@ -96,7 +96,7 @@ const charactersSlice = createSlice({
   name: "characters",
   initialState: {
     selectedCharacter: {
-      id: 1,
+      id: 0,
       name: "Morty Smith",
       status: "Alive",
       species: "Human",

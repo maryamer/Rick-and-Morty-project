@@ -29,10 +29,10 @@ function App() {
   );
 
   return (
-    <div className="app">
+    <div className="app max-w-5xl md:m-auto flex flex-col md:h-screen  md:overflow-hidden ">
       <Toaster />
       <Navbar />
-      <div className="main">
+      <div className="main flex flex-col-reverse justify-center items-center md:items-start md:flex-row md:justify-around">
         {loading ? <Loader /> : <CharacterList />}
         {characterLoading ? <Loader /> : <CharacterDetail />}
       </div>
