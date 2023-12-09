@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://maryamer.github.io/Rick-and-Morty-project.github.io",
+  "homepage": "https://maryamer.github.io/Rick-and-Morty-project/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
