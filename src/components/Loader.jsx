@@ -3,6 +3,7 @@ import { LoaderIcon } from "react-hot-toast";
 function Loader() {
   return (
     <div
+      className="w-full"
       style={{
         color: "var(--slate-300)",
         display: "flex",

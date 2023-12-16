@@ -73,7 +73,7 @@ button {
   width: 98%;
   min-height: 250px;
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--slate-900);
@@ -111,10 +111,10 @@ button {
 }
 
 .backdrop {
-  width: 100vw;
+  /* width: 100vw;
   height: 100vh;
-  position: fixed;
-  inset: 0;
+  position: fixed; */
+  /* inset: 0; */
   background-color: rgba(63, 69, 76, 0.8);
 }
 
