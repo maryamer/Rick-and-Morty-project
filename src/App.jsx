@@ -27,13 +27,22 @@ function App() {
     "https://rickandmortyapi.com/api/character?name",
     query
   );
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="app max-w-5xl md:m-auto flex flex-col md:h-screen  md:overflow-hidden ">
+    <div
+      className={`${
+        isOpen ? " h-screen overflow-hidden" : ""
+      }app max-w-5xl md:m-auto flex flex-col `}
+    >
       <Toaster />
-      <Navbar />
-      <div className="main flex flex-col-reverse justify-center items-center md:items-start md:flex-row md:justify-around">
-        {loading ? <Loader /> : <CharacterList />}
+      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <div
+        className={` ${
+          isOpen && " h-screen overflow-hidden"
+        } main flex flex-col-reverse  justify-center  items-center md:items-start md:flex-row md:justify-around`}
+      >
+        {loading ? <Loader /> : <CharacterList isOpen={isOpen} />}
         {characterLoading ? <Loader /> : <CharacterDetail />}
       </div>
     </div>

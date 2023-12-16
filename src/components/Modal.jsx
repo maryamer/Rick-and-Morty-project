@@ -5,7 +5,7 @@ function Modal({ title, children, onOpen, open }) {
   return (
     <div className="fixed top-0 bottom-0 right-0 left-0 overflow-hidden">
       <div
-        className="backdrop fixed top-0 bottom-0 right-0 left-0 overflow-hidden"
+        className="backdrop z-50 fixed top-0 bottom-0 right-0 left-0 overflow-hidden"
         onClick={() => onOpen(false)}
       ></div>
       ;

@@ -63,7 +63,7 @@ function CharacterSubInfo({ character, isFavourite }) {
         <div className="actions">
           <button
             onClick={() => dispatch(addToFavourites({ character: character }))}
-            className="btn--primary rounded-lg text-sm py-2"
+            className="btn--primary rounded-lg text-sm p-2 w-full"
             disabled={Boolean(isFavourite)}
           >
             {isFavourite ? "unfav" : "Add to Favourite"}

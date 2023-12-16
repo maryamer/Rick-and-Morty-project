@@ -8,7 +8,7 @@ import {
 import { Character } from "./CharacterList";
 import Modal from "./Modal";
 
-const Navbar = ({ children }) => {
+const Navbar = ({ children, isOpen, setIsOpen }) => {
   const { characters } = useSelector((state) => state.characters);
 
   return (
@@ -19,7 +19,7 @@ const Navbar = ({ children }) => {
       <div className="navbar__result hidden md:flex">
         Found {characters?.length} characters
       </div>
-      <Favourites />
+      <Favourites isOpen={isOpen} setIsOpen={setIsOpen} />
     </nav>
   );
 };
@@ -38,10 +38,9 @@ export function Search() {
     />
   );
 }
-export function Favourites() {
+export function Favourites({ isOpen, setIsOpen }) {
   const { favourites } = useSelector((state) => state.characters);
   const dispatch = useDispatch();
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Modal onOpen={setIsOpen} open={isOpen} title="hello world">
