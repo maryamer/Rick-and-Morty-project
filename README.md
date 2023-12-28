@@ -1,8 +1,6 @@
-# React + Vite
+<h2>Check out mr mini project!👇👇</h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://github.com/maryamer/Rick-and-Morty-project/assets/120640902/6a1be682-8464-4512-bfdd-efda362dc56a
+
