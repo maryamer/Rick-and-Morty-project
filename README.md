@@ -1,4 +1,4 @@
-<h2>Check out mr mini project!👇👇</h2>
+<h2>Check out my mini project!👇👇</h2>
 
 
 
